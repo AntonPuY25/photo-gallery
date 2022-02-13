@@ -2,7 +2,7 @@ const main = document.querySelector('.mainBody')
 const input = document.querySelector('input')
 const submit = document.querySelector('.submit')
 const loading = document.querySelector('.loading')
-
+const mainPage = document.querySelector('.main-page')
 
 
 const dataHandler = ()=>{
@@ -11,6 +11,17 @@ const dataHandler = ()=>{
     getData(input?.value || 'summer')
 
 }
+mainPage.addEventListener('click',()=>{
+    if(input.value){
+        input.value = '';
+        main.innerHTML = ''
+        loading.style.display='flex'
+        getData('summer');
+    }
+
+
+})
+
 
  submit.addEventListener('click',dataHandler)
 input.addEventListener('keydown',(e)=> {
@@ -18,7 +29,7 @@ input.addEventListener('keydown',(e)=> {
         dataHandler()
     }
 })
-
+getData()
 
 async function getData(param='summer') {
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&per_page=10&api_key=1e4d008b9e277248c98d6bec026aaf74&tags=${param}&tag_mode=all&extras=url_m&format=json&nojsoncallback=1`;
@@ -29,7 +40,7 @@ async function getData(param='summer') {
 
 
 }
-getData();
+
 
 const sendData = (data)=>{
     if(data.photos.photo.length){
