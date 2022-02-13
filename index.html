@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo-Gallery</title>
+    <script src="main.js" defer type="module"></script>
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<svg display="none">
+    <symbol id="search" viewBox="0 0 632.399 632.399">
+        <g>
+            <path d="M255.108,0C119.863,0,10.204,109.66,10.204,244.904c0,135.245,109.659,244.905,244.904,244.905
+		c52.006,0,100.238-16.223,139.883-43.854l185.205,185.176c1.671,1.672,4.379,1.672,5.964,0.115l34.892-34.891
+		c1.613-1.613,1.47-4.379-0.115-5.965L438.151,407.605c38.493-43.246,61.86-100.237,61.86-162.702
+		C500.012,109.66,390.353,0,255.108,0z M255.108,460.996c-119.34,0-216.092-96.752-216.092-216.092
+		c0-119.34,96.751-216.091,216.092-216.091s216.091,96.751,216.091,216.091C471.199,364.244,374.448,460.996,255.108,460.996z"/>
+        </g>
+    </symbol>
+</svg>
+<div class="container">
+    <header>
+        <div class="logo">
+            <div class="logoImg"><img src="./assets/img/photo.svg" alt="photo"></div>
+            <div>Flicker Api</div>
+        </div>
+        <div class="search">
+            <label for="search"></label>
+            <input type="text" id="search" placeholder="Search"/>
+            <div class="submit">
+              <svg>
+                  <use xlink:href="#search"></use>
+              </svg>
+
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="loading">Loading...</div>
+        <div class="mainBody">
+
+        </div>
+    </main>
+    <footer>
+        <div class="rs"><a href="https://rs.school/js-stage0/" target="_blank"  >
+            <img src="assets/img/rs_school_js.svg" alt="rs"></a></div>
+        <div class="git"><a href="https://github.com/AntonPuY25" target="_blank" >
+            <img src="assets/img/github.svg" alt="github"></a>
+        </a></div>
+    </footer>
+</div>
+
+</body>
+</html>
