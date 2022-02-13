@@ -8,14 +8,12 @@ const loading = document.querySelector('.loading')
 const dataHandler = ()=>{
     main.innerHTML = ''
     loading.style.display='flex'
-    getData(input.value)
-    input.value = ''
+    getData(input?.value || 'summer')
 
 }
 
  submit.addEventListener('click',dataHandler)
 input.addEventListener('keydown',(e)=> {
-    console.log(e.keyCode,'e.keyCode')
     if (e.keyCode === 13) {
         dataHandler()
     }
@@ -34,11 +32,19 @@ async function getData(param='summer') {
 getData();
 
 const sendData = (data)=>{
-    data.photos.photo.forEach(item=>{
+    if(data.photos.photo.length){
+        data.photos.photo.forEach(item=>{
+            const container = document.createElement('div')
+            container.classList.add('content')
+            container.innerHTML = `<img  src=${item.url_m} alt="photo" >`
+            main.appendChild(container)
+        })
+    }else{
         const container = document.createElement('div')
-        container.classList.add('content')
-        container.innerHTML = `<img  src=${item.url_m} alt="photo" >`
+        container.classList.add('error')
+        container.textContent = 'Данные не найдены!'
         main.appendChild(container)
-    })
+    }
+
 
 }
